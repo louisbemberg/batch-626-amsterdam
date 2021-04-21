@@ -19,6 +19,10 @@ def acronym(sentence)
   # make sure they're capitalized
 end
 
+def acronym_advanced(sentence)
+  sentence.split.map { |word| word[0] }.join.upcase
+end
+
 puts "The acronym of I AM A CAT is"
 p acronym("I AM A CAT")
 
@@ -27,5 +31,14 @@ p acronym("SAVE OUR SOULS")
 
 puts "The acronym of FLYING OBJECT REACHING EARTH is"
 p acronym("FLYING OBJECT REACHING EARTH")
+
+puts "The acronym of Oh My God is"
+p acronym_advanced("Oh My God")
+
+puts "The acronym of What the Farm is "
+p acronym_advanced("What the Farm")
+
+puts "The acronym of Laughing My Arms Out is"
+p acronym_advanced("laughing my arms out")
 
 
