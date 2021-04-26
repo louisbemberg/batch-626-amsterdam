@@ -37,7 +37,7 @@ store = {
   'watermelon' => { price: 20, stock: 100 }
 }
 
-# baby_hash = store['apple'] # { price: 4, stock: 20 }
+# baby_hash = store['apple'] # { price: 4, stock: 20 }
 # baby_hash[:price] # 4
 
 # 3. CREATE A NEW SHOPPING CART VARIABLE: A HASH!
@@ -53,7 +53,7 @@ customer_order = nil
 until customer_order == 'quit'
   # 2.2 Display it nicely on screen
   store.each do |item, baby_hash|
-    puts "#{baby_hash[:stock]} x #{item} -- #{baby_hash[:price]}€" ### IMPLEMENT STOCK HERE
+    puts "#{baby_hash[:stock]} x #{item} -- #{baby_hash[:price]}€"
   end
 
   # 4. ask the user for input: what he/she wants to buy
@@ -67,34 +67,35 @@ until customer_order == 'quit'
     quantity = gets.chomp.to_i
     # Check if there is enough stock for this quantity
     if quantity <= store[customer_order][:stock]
-    # IF SO
-      shopping_cart[customer_order] += quantity # shopping_cart[customer_order] = shopping_cart[customer_order] + quantity
+      # execute the code below if the item is in stock
+      # shopping_cart[customer_order] = shopping_cart[customer_order] + quantity
+      shopping_cart[customer_order] += quantity
       # DECREASE STOCK OF THE SHOP
       store[customer_order][:stock] -= quantity
       puts "#{customer_order} was successsfully added to the cart"
-    ###  IF THE ITEM IS NOT IN STOCK:
-    else
+    else # If the item is not in stock
       # let the user know that we dont have enough stock
       puts "We don't have enough #{customer_order} in stock. :("
-  # if not:
     end
   else
-    # tell the user the item is not available # if customer_order != 'quit'
+    # tell the user the item is not available   if customer_order != 'quit'
     puts "#{customer_order} is not available" unless customer_order == 'quit'
   end
-end # LOOP ENDS HERE
+end
+# ^ LOOP ENDS HERE
 
 # 6. calculate total price of what they want to buy
+# make sure the total price starts at 0
 total_price = 0
 
 # CALCULATE THE PRICE NOW THAT OUR CART IS A HASH
 shopping_cart.each do |item, amount|
-  price_of_item = store[item][:price] # this is 4 for apple
+  price_of_item = store[item][:price] # this is 4 for apple
   combined_price = price_of_item * amount # this is 48 for 12 apples
-  total_price += combined_price
-  # "3 x Apple (4€/u) = 12€"
+  total_price += combined_price # we add the price of 48 (12 apples) to the sum
+  # "3 x Apple (4euros/u) = 12euros"
   # We only print it on the bill if there is more than 0 items (at least 1)
-  if amount > 0
+  if amount.positive?
     puts "#{amount} x #{item}(#{price_of_item}€/u) = #{combined_price}"
   end
 end
