@@ -70,7 +70,7 @@ until user_input == 'quit'
     # Check if the number said is actually in the list
     # alternatives:
     # if item_number < array.size && item_number.positive?
-    # if (1.christmas_list.length).include?(item_number)
+    # if (1..christmas_list.length).include?(item_number)
     if (0..christmas_list.length - 1).include?(item_index)
       christmas_list.delete_at(item_index)
       display_list(christmas_list)
