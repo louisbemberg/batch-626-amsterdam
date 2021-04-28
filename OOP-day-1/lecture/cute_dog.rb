@@ -19,5 +19,5 @@ end
 navy = CuteDog.new("Border Collie", "Navy")
 rex = CuteDog.new("German Shepherd", "Rex")
 
-p navy.change_name("Navy Blue")
+# p navy.change_name("Navy Blue")
 p navy.name = "Navy Blue"

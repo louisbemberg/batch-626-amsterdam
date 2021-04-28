@@ -1,5 +1,6 @@
 class BankAccount
-  attr_accessor :all
+  attr_reader :balance # we don't wnat to let users overwrite it!
+  attr_accessor :name
 
   def initialize(owner_name)
     @balance = 0
