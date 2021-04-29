@@ -1,0 +1,42 @@
+1. RECAP (recap.rb)
+  1.1 Student Class
+  1.2 the new & initialize method
+  1.3 adding state to a variable (instance variables)
+  1.4 adding behavior to a variable (instance methods)
+  1.5 attr reader, writer, accessor
+  1.6 custom methods: nickname!
+  1.7 public & private interface
+
+2. Intro of today's lecture: what we will cover
+  2.1 Inheritance
+  2.2 Class Methods
+  2.3 The "self" keyword
+
+2. INHERITANCE (inheritance.rb)
+ 2.1 Creating the FastFood and Gastronomic classes
+ 2.2 similarities & difference between the 2
+ 2.3 introduce the Inheritance Concept:
+     "Ruby checks in the child. If it finds it, it doesn't bother checking the parent."
+     "If it doesn't find what it wants in the child, it checks in the parent."
+ 2.4 Three possible scenarios:
+    2.4.1 The Child has it: Parent is Ignored
+    2.4.2 The Child doesn't have it: We use the Parent's
+    2.4.3 They both have it and we want to use both: The super keyword
+ 2.5 The Super keyword: Calling the parent's name with the same name
+ 2.6 One more example with "Child" and "Parent" class
+ 2.7 One more example: Lecture slides
+
+
+3. CLASS METHODS (class_methods.rb) > dog class
+ 3.1 brief recap of what instance methods were
+ 3.2 Dog Class & some instance variables & instance methods
+ 3.3 example of a class Method for the dog class
+ 3.4 how to call class methods (do they work on Classes? yes! on instances? no!)
+ 3.5 example of a class Method for one restaurant
+ 3.6 example from the Lectures (Castles & co.)
+
+4. THE SELF KEYWORD (self.rb)
+  4.1 One application of self: to build class methods
+  4.2 What is self when used INSIDE of an instance method?
+  4.3 Connecting two instances together
+  4.4 Using self to connect instances together
